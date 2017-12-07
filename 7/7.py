@@ -53,6 +53,7 @@ with open("input.txt", "r") as f:
 trees = []
 
 for l in lines:
+    # parse name, weight and children names
     l = l.split()
     name = l[0]
     weight = int(l[1].strip('()'))
@@ -62,6 +63,7 @@ for l in lines:
         for i in range(len(l)-3):
             children_names.append(l[i+3].strip(','))
 
+    # find existing or create new children
     for c in children_names:
         found = False
         for t in trees:
@@ -76,6 +78,7 @@ for l in lines:
         else:
             trees.remove(node)
 
+    # find this node as a child or create it
     found = False
     for t in trees:
         node = search_tree(t, name)
@@ -87,8 +90,8 @@ for l in lines:
     if not found:
         trees.append(Node(name, weight, children))
 
+# only tree left is root
 print(trees[0].name)
 
 b, new_weight = sum_children(trees[0])
-
 print(new_weight)
