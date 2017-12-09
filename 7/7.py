@@ -1,5 +1,6 @@
 # God this got ugly.
 
+
 class Node:
     def __init__(self, name, weight=0, children=[]):
         self.name = name
