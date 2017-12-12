@@ -15,7 +15,7 @@ for l in data:
         for conn in conns:
             if conn in g:
                 conn_groups.append(g)
-                conns += g
+                conns = list(set(conns + g))
                 break
 
     for g in conn_groups:
@@ -25,6 +25,7 @@ for l in data:
 
 for g in groups:
     if 0 in g:
-        print(len(set(g)))
+        print(len(g))
+        break
 
 print(len(groups))
