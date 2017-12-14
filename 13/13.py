@@ -9,6 +9,7 @@ def is_hit_stupid(depth, timesteps):
         timesteps -= 1
     return pos == 0
 
+
 def is_hit(depth, timesteps):
     offset = timesteps % (depth-1)
     up_or_down = timesteps // (depth-1)

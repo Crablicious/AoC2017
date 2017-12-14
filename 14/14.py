@@ -1,5 +1,6 @@
 import binascii
 
+
 def knot_hash(data):
     lengths = [ord(x) for x in data]
     length_suffix = [17, 31, 73, 47, 23]
@@ -39,10 +40,10 @@ def knot_hash(data):
 
 
 def kill_neighbors(x, y):
-    if grid[(x,y)] == '0':
+    if grid[(x, y)] == '0':
         return
     else:
-        grid[(x,y)] = '0'
+        grid[(x, y)] = '0'
         try:
             kill_neighbors(x+1, y)
         except:
@@ -69,7 +70,7 @@ for row in range(128):
     key = inp+str(row)
     hexahash = knot_hash(key)
     # magic line from stackoverflow
-    string = ''.join([bin(int(x,16)+16)[3:] for y,x in enumerate(hexahash)])
+    string = ''.join([bin(int(x, 16)+16)[3:] for y, x in enumerate(hexahash)])
     total_ones += string.count('1')
     for i in range(len(string)):
         grid[(i, row)] = string[i]

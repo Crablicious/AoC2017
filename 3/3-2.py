@@ -5,8 +5,8 @@ def create_grid(last_value):
     last_run = 0
 
     grid = {}
-    grid[(0,0)] = 1
-    grid[(1,0)] = 1
+    grid[(0, 0)] = 1
+    grid[(1, 0)] = 1
     direc = (0, 0)
     pos = [1, 0]
     layer = 1

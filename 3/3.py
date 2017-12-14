@@ -7,6 +7,7 @@ def create_grid(last_value):
         if value == layer_max:
             pos[0] += 1
 
+
 def calculate_layer(last_value):
     pos = [0, 0]
     value = 1
